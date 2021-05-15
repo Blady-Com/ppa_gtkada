@@ -1,0 +1,62 @@
+with "gtkada";
+
+project Essai2 is
+
+   type Gtkada_Kind_Type is
+      ("static", "relocatable");
+   for Source_Dirs use ("src");
+   for Object_Dir use "obj";
+   for Main use ("main.adb");
+   LIBRARY_TYPE : Gtkada_Kind_Type := external ("LIBRARY_TYPE");
+
+   --  Enable Ada 2005.
+   package Compiler is
+
+      case LIBRARY_TYPE is
+
+         when "static" =>
+            for Default_Switches ("ada") use ("-gnatVa", "-gnatwa", "-gnat05", "-g", "-gnatf", "-gnato");
+
+         when "relocatable" =>
+            for Default_Switches ("ada") use ("-gnat05");
+      end case;
+   end Compiler;
+
+   package Builder is
+
+      case LIBRARY_TYPE is
+
+         when "static" =>
+            for Default_Switches ("ada") use ("-g");
+
+         when "relocatable" =>
+
+      end case;
+   end Builder;
+
+   package Binder is
+
+      case LIBRARY_TYPE is
+
+         when "static" =>
+            for Default_Switches ("ada") use ("-E");
+
+         when "relocatable" =>
+
+      end case;
+   end Binder;
+
+   package Pretty_Printer is
+
+      case LIBRARY_TYPE is
+
+         when "static" =>
+            for Default_Switches ("ada") use ("-M99");
+
+         when "relocatable" =>
+
+      end case;
+   end Pretty_Printer;
+
+end Essai2;
+

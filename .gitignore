@@ -1,0 +1,11 @@
+obj
+b__*.ad?
+gnatinspect.db*
+clang_ref_cache.db
+*.stdout
+*.stderr
+*.cgpr
+*-loc.xml
+*.bexch
+*.o
+*.ali

@@ -1,0 +1,35 @@
+with "gtkada.gpr";
+
+project Essai1 is
+
+   type Gtkada_Kind_Type is
+      ("static", "relocatable");
+   for Main use ("window1.adb");
+   LIBRARY_TYPE : Gtkada_Kind_Type := external ("LIBRARY_TYPE");
+
+   package Pretty_Printer is
+
+      case LIBRARY_TYPE is
+
+         when "static" =>
+            for Default_Switches ("ada") use ("-M99");
+
+         when "relocatable" =>
+
+      end case;
+   end Pretty_Printer;
+
+   package Compiler is
+
+      case LIBRARY_TYPE is
+
+         when "static" =>
+            for Default_Switches ("ada") use ("-gnatVa", "-gnatwa", "-gnatf", "-g", "-gnato");
+
+         when "relocatable" =>
+
+      end case;
+   end Compiler;
+
+end Essai1;
+

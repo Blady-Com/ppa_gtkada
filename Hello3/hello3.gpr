@@ -1,0 +1,8 @@
+with "gtkada.gpr";
+
+project Hello3 is
+
+   for Main use ("hello3.adb");
+
+end Hello3;
+

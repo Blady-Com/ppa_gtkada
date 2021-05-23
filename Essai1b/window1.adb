@@ -8,7 +8,6 @@ procedure Window1 is
    Window1 : Window1_Access;
 
 begin
-   Gtk.Main.Set_Locale;
    Gtk.Main.Init;
    Gtk_New (Window1);
    Show_All (Window1);

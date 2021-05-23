@@ -5,7 +5,6 @@
 -----------------------------------------------------------------------------
 
 with Glib;       use Glib;
-with Gtk.Object; use Gtk.Object;
 with Gtk.Enums;  use Gtk.Enums;
 with Gtk.Widget; use Gtk.Widget;
 with Gtk.GEntry; use Gtk.GEntry;
@@ -46,7 +45,7 @@ package body Window1_Callbacks  is
    -----------------------------------------------
 
    procedure On_Button2_Clicked (Builder : access Gtkada_Builder_Record'Class) is
-      S : constant UTF8_String := Get_Text(Gtk_Entry (Get_Widget (Builder, "entry1")));
+      S : constant UTF8_String := Get_Text(Gtk_Entry (Get_Object (Builder, "entry1")));
       function Factorielle (N : Natural) return Long_Long_Integer is
          F : Long_Long_Integer := 1;
       begin
@@ -56,11 +55,11 @@ package body Window1_Callbacks  is
          return F;
       end Factorielle;
    begin
-      Set_Text(Gtk_Entry (Get_Widget (Builder, "entry1")),
+      Set_Text(Gtk_Entry (Get_Object (Builder, "entry1")),
          Long_Long_Integer'Image(Factorielle(Natural'Value(S))));
    exception
       when others =>
-         Set_Text(Gtk_Entry (Get_Widget (Builder, "entry1")), "Erreur!");
+         Set_Text(Gtk_Entry (Get_Object (Builder, "entry1")), "Erreur!");
     end On_Button2_Clicked;
 
 

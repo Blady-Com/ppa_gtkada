@@ -15,6 +15,7 @@ with Gtk;            use Gtk;
 with Gtk.Main;
 with Glib.Error;     use Glib.Error;
 with Gtk.Widget;     use Gtk.Widget;
+with Gtk.Builder;    use Gtk.Builder;
 with Gtkada.Builder; use Gtkada.Builder;
 
 -- Ada predefined units
@@ -27,8 +28,9 @@ with Window1_Callbacks; use Window1_Callbacks;
 procedure Essai1 is
 
    Builder       : Gtkada_Builder;
-   Error         : Glib.Error.GError;
+   Error         : aliased Glib.Error.GError;
    GladeFileName : constant String := "Essai1.glade";
+   use type Glib.Guint;
 
 begin
 
@@ -37,8 +39,7 @@ begin
    -- Step 1: create a Builder and add the XML data
 
    Gtk_New (Builder);
-   Error := Add_From_File (Builder, GladeFileName);
-   if Error /= null then
+   if Add_From_File (Gtk_Builder(Builder), GladeFileName, Error'Access) = 0 then
       Put_Line ("Error : " & Get_Message (Error));
       Error_Free (Error);
       return;
@@ -60,7 +61,7 @@ begin
    -- Step 3.5 : display the windows and all of their children.
    --            Remove objects than are not windows as necessary.
 
-   Show_All (Get_Widget (Builder, "window1"));
+   Show_All (Gtk_Widget (Get_Object (GTK_Builder (Builder), "window1")));
    Gtk.Main.Main;
 
    --  Step 4: when the application terminates

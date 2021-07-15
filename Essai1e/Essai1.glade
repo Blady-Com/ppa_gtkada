@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.14"/>
+  <object class="GtkWindow" id="Window1">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Essai 1e</property>
+    <signal name="delete-event" handler="on_window1_delete_event" swapped="no"/>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">Quitter</property>
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_button1_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">310</property>
+            <property name="y">170</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entry1">
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">130</property>
+            <property name="y">90</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-left">19</property>
+            <property name="label" translatable="yes">Saisir un nombre :</property>
+          </object>
+          <packing>
+            <property name="x">10</property>
+            <property name="y">90</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">Factorielle</property>
+            <property name="width-request">100</property>
+            <property name="height-request">30</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_button2_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">310</property>
+            <property name="y">90</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

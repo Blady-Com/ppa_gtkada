@@ -27,8 +27,9 @@ with Window1_Callbacks; use Window1_Callbacks;
 procedure Essai2 is
 
    Builder       : Gtkada_Builder;
-   Error         : Glib.Error.GError;
+   Error         : aliased Glib.Error.GError;
    GladeFileName : constant String := "Essai2.glade";
+   use Glib;
 
 begin
 
@@ -37,8 +38,7 @@ begin
    -- Step 1: create a Builder and add the XML data
 
    Gtk_New (Builder);
-   Error := Add_From_File (Builder, GladeFileName);
-   if Error /= null then
+   if Add_From_File (Builder, GladeFileName, Error'Access) = 0 then
       Put_Line ("Error : " & Get_Message (Error));
       Error_Free (Error);
       return;
@@ -60,7 +60,7 @@ begin
    -- Step 3.5 : display the windows and all of their children.
    --            Remove objects than are not windows as necessary.
 
-   Show_All (Get_Widget (Builder, "window1"));
+   Show_All (Gtk_Widget (Get_Object (Builder, "window1")));
    Gtk.Main.Main;
 
    --  Step 4: when the application terminates

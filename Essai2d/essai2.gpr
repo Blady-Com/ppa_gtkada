@@ -1,0 +1,4 @@
+with "gtkada.gpr";
+project Essai2 is
+   for Main use ("essai2.adb");
+end Essai2;

@@ -15,6 +15,7 @@ Code source des exemples du tutoriel sur GTKAda:
 - Exemple de programme à partir du modèle GPS : hello2.
 - Exemple de programme avec le contournement pour une exécution avec GPS : hello3.
 - Exemple de programme avec Cairo : hello_cairo.
+- Exemple de programme multitâche : tasking.
 
 Essais successifs suivant les versions de GTK, GTKAda et Glade :
 
@@ -33,4 +34,4 @@ Essais successifs suivant les versions de GTK, GTKAda et Glade :
   * Essai2c : GTK 3.0
   * Essai2d : GTK 3.14
 
-Pascal Pignard, août 2017, juillet 2021.
+Pascal Pignard, décembre 2015, juillet 2021.

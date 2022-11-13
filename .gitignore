@@ -9,3 +9,4 @@ clang_ref_cache.db
 *.bexch
 *.o
 *.ali
+.clang-format

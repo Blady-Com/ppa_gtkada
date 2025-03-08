@@ -4,5 +4,9 @@ project Essai1 is
 
    for Main use ("window1.adb");
 
+   package Builder is
+      for Executable ("window1.adb") use "window1b";
+   end Builder;
+
 end Essai1;
 

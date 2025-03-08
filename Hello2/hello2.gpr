@@ -1,4 +1,4 @@
-with "gtkada";
+with "gtkada.gpr";
 
 project Hello2 is
 

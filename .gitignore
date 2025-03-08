@@ -10,3 +10,6 @@ clang_ref_cache.db
 *.o
 *.ali
 .clang-format
+/alire/
+/config/
+*.cswi

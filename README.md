@@ -1,37 +1,25 @@
-# Exemples du tutoriel sur GTKAda
+# GTKAda tutorials
 
-[GTKAda](www.adacore.com/gtkada) est la boite à outil graphique en Ada basée sur [GTK](www.gtk.org)
-pour construire des applications graphiques portables sur la plupart des plates-formes.
+[![Alire](https://img.shields.io/endpoint?url=https://alire.ada.dev/badges/automate.json)](https://alire.ada.dev/crates/ppa_gtkada.html)
+
+[GTKAda](www.adacore.com/gtkada) is the graphic toolbox based on [GTK](www.gtk.org) for building
+portable GUI applications in Ada.
 
 
-Le tutoriel [PPA_GTKAda](https://blady.pagesperso-orange.fr/telechargements/gtkada/gtk-ada.pdf)
-comprend les premiers pas de la construction d'une interface utilisateur graphique
-en GTKAda avec Glade et Gate3 ainsi que la gestion des événements, des widgets button, label, text entry,
-check button et cursor, la bibliothèque graphique Cairo, le multitâche et la gestion des événements.
+See README_FR.md and gtk-ada.pdf (in French) for more details.
 
-Code source des exemples du tutoriel sur GTKAda:
+## Using [Alire](https://alire.ada.dev)
 
-- Exemple de programme tout en un : hello.
-- Exemple de programme à partir du modèle GPS : hello2.
-- Exemple de programme avec le contournement pour une exécution avec GPS : hello3.
-- Exemple de programme avec Cairo : hello_cairo.
-- Exemple de programme multitâche : tasking.
+In your working folder, do:
 
-Essais successifs suivant les versions de GTK, GTKAda et Glade :
+```
+% alr get ppa_gtkada
+% cd ppa_gtkada_*
+% alr build
+```
 
-- Exemple factorielle avec interface minimale :
+## Licence
 
-  * Essai1a : GTK 2.14
-  * Essai1b : GTK 2.18
-  * Essai1c : GTK 2.24
-  * Essai1d : GTK 3.0
-  * Essai1e : GTK 3.14
+All files are provided under terms of the [CeCILL](https://cecill.info) License version 2.1.
 
-- Exemple factorielle avec interface complète :
-
-  * Essai2a : GTK 2.18
-  * Essai2b : GTK 2.24
-  * Essai2c : GTK 3.0
-  * Essai2d : GTK 3.14
-
-Pascal Pignard, décembre 2015, juillet 2021.
+Pascal Pignard, March 2025.

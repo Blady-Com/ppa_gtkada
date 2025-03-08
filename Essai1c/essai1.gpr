@@ -1,4 +1,7 @@
 with "gtkada.gpr";
 project Essai1 is
    for Main use ("essai1.adb");
+   package Builder is
+      for Executable ("essai1.adb") use "essai1c";
+   end Builder;
 end Essai1;

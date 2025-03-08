@@ -1,6 +1,6 @@
 # GTKAda tutorials
 
-[![Alire](https://img.shields.io/endpoint?url=https://alire.ada.dev/badges/automate.json)](https://alire.ada.dev/crates/ppa_gtkada.html)
+[![Alire](https://img.shields.io/endpoint?url=https://alire.ada.dev/badges/ppa_gtkada.json)](https://alire.ada.dev/crates/ppa_gtkada.html)
 
 [GTKAda](www.adacore.com/gtkada) is the graphic toolbox based on [GTK](www.gtk.org) for building
 portable GUI applications in Ada.
